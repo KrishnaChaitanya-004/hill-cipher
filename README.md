@@ -1,6 +1,6 @@
 # File Management Web Application
 
-This web application allows users to upload and download files. The files are encrypted before storing and decrypted when downloading.
+This web application allows users to securely upload and download files. Files are encrypted before storage and decrypted upon download using the Hill cipher.
 
 ## Features
 
@@ -15,48 +15,45 @@ The backend is built with Node.js and Express.
 
 ### Setup
 
-1. Navigate to the `backend` directory:
-   ```sh
-   cd backend
-2. Install dependencies:
-    npm install
-3. Start the server:
-    node index.js
-The server will run on http://localhost:3000.
+1. Navigate to the `backend` directory: `cd backend`
+2. Install dependencies: `npm install`
+3. Start the server: `node index.js`  
+   The server will run on [http://localhost:3000](http://localhost:3000).
 
-API Endpoints
-Upload File: POST /upload
+### API Endpoints
 
-Uploads and encrypts a file.
-Request: multipart/form-data with a file field named file.
-Download File: GET /download/:filename
+- **Upload File**: `POST /upload`  
+  Uploads and encrypts a file.  
+  **Request**: `multipart/form-data` with a file field named `file`.
 
-Downloads and decrypts a file.
-Response: Decrypted file content.
-List Files: GET /files
+- **Download File**: `GET /download/:filename`  
+  Downloads and decrypts a file.  
+  **Response**: Decrypted file content.
 
-Lists all uploaded files.
-Response: JSON array of filenames.
-Frontend
+- **List Files**: `GET /files`  
+  Lists all uploaded files.  
+  **Response**: JSON array of filenames.
+
+## Frontend
+
 The frontend is built with React and Vite.
 
-SETUP
-1. Navigate to the frontend directory:
-        cd frontend
-2. Install dependencies:
-        npm install
-3. Start the development server:
-        npm run dev
-The frontend will run on http://localhost:5173.
+### Setup
 
-Components
-    -Upload: Component for uploading files.
-    -List: Component for listing and downloading files.
-Usage
+1. Navigate to the `frontend` directory: `cd frontend`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`  
+   The frontend will run on [http://localhost:5173](http://localhost:5173).
+
+### Components
+
+- **Upload**: Component for uploading files.
+- **List**: Component for listing and downloading files.
+
+## Usage
+
 1. Open the frontend in your browser.
 2. Use the upload form to select and upload a file.
 3. The file will be encrypted and stored on the server.
 4. The list of files will be updated automatically.
 5. Click on a file link to download and decrypt the file.
-
-This README provides an overview of the application, setup instructions, API endpoints, and usage information.
